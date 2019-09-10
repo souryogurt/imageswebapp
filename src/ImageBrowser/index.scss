@@ -1,0 +1,11 @@
+@import '@blueprintjs/core/lib/scss/variables';
+
+.ImageBrowser {
+  display: flex;
+  &__Left {
+    width: 300px;
+  }
+  &__Right {
+    flex: 1;
+  }
+}

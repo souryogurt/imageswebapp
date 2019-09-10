@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppNavbar } from '../AppNavbar';
+import { ImageBrowser } from '../ImageBrowser';
 import './index.css';
 import { Classes } from '@blueprintjs/core';
 import { connect } from 'react-redux';
@@ -15,6 +16,7 @@ class App extends React.Component {
     return (
       <div className={classes}>
         <AppNavbar />
+        <ImageBrowser className="App__content" />
       </div>
     );
   }
