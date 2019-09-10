@@ -10,12 +10,12 @@ function NoImage({ className, uploadImageDialog }) {
     <NonIdealState
       className={className}
       visual="document"
-      title="Create new image"
+      title="No images"
       action={
         <Button
           large
-          icon="document"
-          text="New image..."
+          icon="upload"
+          text="Upload image..."
           intent={Intent.PRIMARY}
           onClick={uploadImageDialog}
         />

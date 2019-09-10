@@ -1,0 +1,7 @@
+@import '@blueprintjs/core/lib/scss/variables';
+
+.UploadImageDialog {
+  &__file {
+    margin-top: $pt-grid-size;
+  }
+}

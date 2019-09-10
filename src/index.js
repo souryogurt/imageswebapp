@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import 'normalize.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
@@ -12,8 +12,8 @@ import { App } from './App';
 
 let store = configureStore();
 
-FocusStyleManager.onlyShowFocusOnTabs();
-render(
+//FocusStyleManager.onlyShowFocusOnTabs();
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
