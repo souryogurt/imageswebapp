@@ -1,0 +1,14 @@
+@import '@blueprintjs/core/lib/scss/variables';
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: $pt-navbar-height;
+}
