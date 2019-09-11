@@ -12,7 +12,7 @@ import { App } from './App';
 
 let store = configureStore();
 
-//FocusStyleManager.onlyShowFocusOnTabs();
+FocusStyleManager.onlyShowFocusOnTabs();
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -10,6 +10,7 @@ import {
 } from '@blueprintjs/core';
 import { connect } from 'react-redux';
 import * as ui from '../store/ui';
+import * as imagesapp from '../store/imagesapp';
 import './index.css';
 
 class UploadImageDialog extends React.Component {
@@ -94,6 +95,7 @@ class UploadImageDialog extends React.Component {
                 fill="true"
                 text={sourceFile ? sourceFile : 'Choose a file...'}
                 hasSelection={sourceFile !== ''}
+                intent={rejected ? Intent.DANGER : Intent.DEFAULT}
                 onInputChange={this.fileChange}
               />
             </FormGroup>
@@ -123,7 +125,8 @@ const mapStateToProps = state => {
 const UploadImageDialogWithState = connect(
   mapStateToProps,
   {
-    closeUploadImageDialog: ui.closeUploadImageDialog
+    closeUploadImageDialog: ui.closeUploadImageDialog,
+    uploadNewImage: imagesapp.uploadNewImage
   }
 )(UploadImageDialog);
 export { UploadImageDialogWithState as UploadImageDialog };
