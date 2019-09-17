@@ -16,7 +16,7 @@ import './index.css';
 class UploadImageDialog extends React.Component {
   state = {
     imageName: '',
-    sourceFile: '',
+    sourceFile: null,
     rejected: false,
     rejectMessage: ''
   };
@@ -30,7 +30,7 @@ class UploadImageDialog extends React.Component {
   fileChange = event => {
     this.setState({
       ...this.state,
-      sourceFile: event.target.value,
+      sourceFile: event.target.files[0],
       rejected: false
     });
   };
@@ -56,10 +56,11 @@ class UploadImageDialog extends React.Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            uploadNewImage(imageName)
+            uploadNewImage(sourceFile, imageName)
               .then(() => {
                 this.setState({
                   imageName: '',
+                  sourceFile: null,
                   rejected: false,
                   rejectMessage: ''
                 });
@@ -93,10 +94,11 @@ class UploadImageDialog extends React.Component {
               <FileInput
                 className={'UploadImageDialog__file'}
                 fill="true"
-                text={sourceFile ? sourceFile : 'Choose a file...'}
-                hasSelection={sourceFile !== ''}
+                text={sourceFile ? sourceFile.name : 'Choose a file...'}
+                hasSelection={sourceFile !== null}
                 intent={rejected ? Intent.DANGER : Intent.DEFAULT}
-                onInputChange={this.fileChange}
+                inputProps={{ accept: 'image/*' }}
+                onChange={this.fileChange}
               />
             </FormGroup>
           </div>
